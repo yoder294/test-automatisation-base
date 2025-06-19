@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"Test worker","id":1}];
+var items = [{"id":1,"group":1,"content":"marvel-characters[1:10]","start":1750293449062,"end":1750293449252,"title":"marvel-characters[1:10] 19:37:29.062-19:37:29.252 Validar respuesta según si la lista está vacía o no"},{"id":2,"group":1,"content":"marvel-characters[2:18]","start":1750293449260,"end":1750293449286,"title":"marvel-characters[2:18] 19:37:29.260-19:37:29.286 Crear personaje con nombre duplicado"},{"id":3,"group":1,"content":"marvel-characters[3:26]","start":1750293449296,"end":1750293449325,"title":"marvel-characters[3:26] 19:37:29.296-19:37:29.325 Obtener personaje por ID (exitoso)"},{"id":4,"group":1,"content":"marvel-characters[4:35]","start":1750293449334,"end":1750293449352,"title":"marvel-characters[4:35] 19:37:29.334-19:37:29.352 Obtener personaje por ID (no existe)"},{"id":5,"group":1,"content":"marvel-characters[5:41]","start":1750293449362,"end":1750293449389,"title":"marvel-characters[5:41] 19:37:29.362-19:37:29.389 Crear personaje con campos requeridos vacíos"},{"id":6,"group":1,"content":"marvel-characters[6:52]","start":1750293449397,"end":1750293449428,"title":"marvel-characters[6:52] 19:37:29.397-19:37:29.428 Actualizar personaje exitosamente"},{"id":7,"group":1,"content":"marvel-characters[7:61]","start":1750293449437,"end":1750293449453,"title":"marvel-characters[7:61] 19:37:29.437-19:37:29.453 Actualizar personaje (no existe)"},{"id":8,"group":1,"content":"marvel-characters[8:69]","start":1750293449461,"end":1750293449474,"title":"marvel-characters[8:69] 19:37:29.461-19:37:29.474 Eliminar personaje exitosamente"},{"id":9,"group":1,"content":"marvel-characters[9:74]","start":1750293449484,"end":1750293449496,"title":"marvel-characters[9:74] 19:37:29.484-19:37:29.496 Eliminar personaje (no existe)"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

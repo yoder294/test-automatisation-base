@@ -1,0 +1,16 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Gradle Test",
+			"command": "./gradlew test",
+			"args": [],
+			"group": "build",
+			"problemMatcher": [
+				"$javac"
+			],
+			"isBackground": false
+		}
+	]
+}
